@@ -19,6 +19,17 @@ public class CommentService {
         this.commentNotificationProxy = commentNotificationProxy;
     }
 
+    // Dependency Injection - Field Injection
+    /*
+    Fields are no longer final here, and they are marked with @Autowired.
+    Spring uses the default constructor to create the instance of the class
+    And then injects the two dependencies from its context.
+    @Autowired
+    private commentRepository = CommentRepository;
+    @Autowired
+    private commentNotificationProxy = commentNotificationProxy;
+     */
+
     public void publishComment(Comment comment){
         commentRepository.storeComment(comment);
         commentNotificationProxy.sendComment(comment);
