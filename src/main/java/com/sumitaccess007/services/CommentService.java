@@ -11,6 +11,7 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final CommentNotificationProxy commentNotificationProxy;
 
+    // Dependency Injection - Constructor Injection
     @Autowired
     public CommentService(CommentRepository commentRepository,
                           CommentNotificationProxy commentNotificationProxy) {
